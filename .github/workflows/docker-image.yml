@@ -15,6 +15,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag hilary81/docker-app-tutorial:$(date +%s)
+      run: docker build . --file Dockerfile --tag hilary81/docker-app-tutorial:latest
     - name: Push the Docker image
-      run: docker login -u hilary81 -p ${{ secrets.DOCKER_TOKEN }} && docker push hilary81/docker-app-tutorial:$(date +%s)
+      run: docker login -u hilary81 -p ${{ secrets.DOCKER_TOKEN }} && docker push hilary81/docker-app-tutorial:latest
